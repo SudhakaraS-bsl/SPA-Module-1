@@ -2,15 +2,18 @@
 <html ng-app="Assignment1App">
   <head>
     <meta charset="utf-8">
-    <<script src="angular.min.js"></script>
+    <script src="angular.min.js"></script>
     <script src="app.js"></script>
     <title>Module-1 Coding Assignment</title>
   </head>
   <body>
-    <h1>Module-1 Coding Assignment</h1>
     <div ng-controller="Assignment1Controller">
-Enter items: <input type="text" ng-model="{{ lunchNames }}">
-{{lunchNames}}
+   <h1> {{ name }}</h1>  
+
+    Please enter lunch items: <input type="text" ng-model="items" />
+    <button ng-click="validateItems(items)" >Check If Too Much</button>
+   <br />
+   <span>{{ message }}</span>
     </div>
   </body>
 </html>
