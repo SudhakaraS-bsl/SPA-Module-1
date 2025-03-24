@@ -1,19 +1,33 @@
 <!DOCTYPE html>
 <html ng-app="Assignment1App">
-  <head>
-    <meta charset="utf-8">
-    <script src="angular.min.js"></script>
-    <script src="app.js"></script>
-    <title>Module-1 Coding Assignment</title>
-  </head>
-  <body>
-    <div ng-controller="Assignment1Controller">
-   <h1> {{ name }}</h1>  
 
-    Please enter lunch items: <input type="text" ng-model="items" placeholder="comma separated values"/>
-    <button ng-click="validateItems(items)" >Check If Too Much</button>
-   <br />
-   <span>{{ message }}</span>
-    </div>
-  </body>
+<head>
+  <meta charset="utf-8">
+  <!-- style css -->
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- library js -->
+  <script src="angular.min.js"></script>
+
+  <!-- Module js -->
+   <script src="Assignment1Controller.js" ></script>
+  <script src="app.js"></script>
+  <title>Module-1 Coding Assignment</title>
+</head>
+
+<body ng-controller="Assignment1Controller as ctrl">
+  <fieldset>
+    <legend>
+      <h1> {{ ctrl.name }}</h1>
+    </legend>
+    <h3> Please enter lunch items:</h3> <input type="text" ng-model="ctrl.items" placeholder="comma separated values" />
+    <button ng-click="ctrl.validateItems();">Check If Too Much</button>
+    <br />
+    <span ng-if="ctrl.success" class="success">{{ ctrl.successMessage }}</span>
+    <span ng-if="ctrl.tooMuch" class="tooMuch">{{ ctrl.tooMuchMessage }}</span>
+    <span ng-if="ctrl.validation" class="validation">{{ ctrl.validationMessage }}</span>
+  </fieldset>
+
+</body>
+
 </html>
